@@ -4,7 +4,9 @@ const path = require("path");
 const pathDir = __dirname;
 
 function readTestFile(fileName) {
-  return fs.readFileSync(fileName).toString();
+  const inputs = fs.readFileSync(fileName).toString();
+  console.log(inputs);
+  return inputs;
 }
 
 function runTest(fileName) {
