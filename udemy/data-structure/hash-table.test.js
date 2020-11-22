@@ -33,6 +33,34 @@ class HashTable {
 
     return undefined;
   }
+
+  keys() {
+    let array = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (!this.keyMap[i]) continue;
+      for (let j = 0; j < this.keyMap[i].length; j++) {
+        if (array.includes(this.keymap[i][j][0])) continue;
+        array.push(this.keyMap[i][j][0]);
+      }
+    }
+
+    return array;
+  }
+
+  values() {
+    let array = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (!this.keyMap[i]) continue;
+      for (let j = 0; j < this.keyMap[i].length; j++) {
+        if (array.includes(this.keymap[i][j][1])) continue;
+        array.push(this.keyMap[i][j][1]);
+      }
+    }
+
+    return array;
+  }
 }
 
 const hashMap = new HashTable(5);
