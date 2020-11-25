@@ -69,9 +69,10 @@ class Graph {
     const queue = [vertex];
     const results = [];
     const visited = { [vertex]: true };
+    let v;
 
     while (vertex && queue.length) {
-      const v = queue.shift();
+      v = queue.shift();
       results.push(v);
 
       this.adjacencyList[v].forEach((neighbor) => {
