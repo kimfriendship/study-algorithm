@@ -9,3 +9,12 @@ function memoFib(n, memo = [0, 1, 1]) {
   memo[n] = result;
   return result;
 }
+
+function tableFib(n) {
+  if (n <= 2) return 1;
+  const table = [0, 1, 1];
+  for (let i = 3; i <= n; i++) {
+    table[i] = table[i - 2] + table[i - 1];
+  }
+  return table[n];
+}
