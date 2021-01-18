@@ -1,8 +1,9 @@
-// 핸드폰 번호 가리기
+// 하샤드 수
 
-function solution(phone_number) {
-  const length = phone_number.length;
-  const answer = "*".repeat(length - 4) + phone_number.slice(-4);
-
-  return answer;
+function solution(x) {
+  const sum = String(x)
+    .split("")
+    .reduce((a, b) => +a + +b, 0);
+  const isHarshad = x % sum === 0;
+  return isHarshad;
 }

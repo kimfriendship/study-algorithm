@@ -1,9 +1,6 @@
-// 하샤드 수
+// 평균 구하기
 
-function solution(x) {
-  const sum = String(x)
-    .split("")
-    .reduce((a, b) => +a + +b, 0);
-  const isHarshad = x % sum === 0;
-  return isHarshad;
+function solution(arr) {
+  const answer = arr.reduce((a, b) => a + b, 0) / arr.length;
+  return answer;
 }
