@@ -1,45 +1,15 @@
-// 시저 암호
+// 내적
 
-function solution(s, n) {
-  const strs = s.split("");
-  const chars = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  let isLowerCase = true;
+function solution1(a, b) {
+  let answer = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    if (strs[i] === " ") continue;
-    const char = strs[i].toLowerCase();
-    const idx = chars.indexOf(char) + n;
-    const newChar = chars[idx > 25 ? idx - 26 : idx];
-    isLowerCase = strs[i] === char ? true : false;
-    strs[i] = isLowerCase ? newChar : newChar.toUpperCase();
+  for (let i = 0; i < a.length; i++) {
+    answer += a[i] * b[i];
   }
 
-  return strs.join("");
+  return answer;
+}
+
+function solution2(a, b) {
+  return a.reduce((acc, curr, i) => acc + curr * b[i], 0);
 }
